@@ -1,0 +1,12 @@
+# Ignore environment variable files
+.env
+.env.local
+.env.*.local
+
+# Ignore API keys
+api_keys.json
+api_keys.yaml
+api_keys.txt
+
+# Ignore any other sensitive files
+secrets/

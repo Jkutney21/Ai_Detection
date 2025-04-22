@@ -1,0 +1,11 @@
+flask
+flask-cors
+playwright
+pytesseract
+opencv-python
+numpy
+mss
+websockets
+psutil
+playwright-stealth
+spacy

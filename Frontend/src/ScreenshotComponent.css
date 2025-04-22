@@ -1,0 +1,47 @@
+/* Non-transparent background for the screenshot container */
+.screenshot-container {
+    position: relative;
+    border-radius: 10px; /* Rounding the corners */
+   
+  }
+  
+  /* Overlay for selection area */
+  .selection-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Transparent black overlay */
+    cursor: crosshair;
+    z-index: 999; /* Layer above other content */
+  }
+  
+  /* Selection box to show the area to be captured */
+  .selection-box {
+    position: absolute;
+    border: 4px dashed #fa0303; /* White dashed border for the selection box */
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    border-radius: 5px; /* Adding rounded corners to the selection box */
+  }
+  
+  /* Main content container */
+  .main-content {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Screenshot button styling */
+  .screenshot-button {
+    margin-top: 100px;
+    position: fixed;
+    background-color: rgb(200, 50, 255); /* Non-transparent background */
+    border: 2px solid #580955; /* Border color */
+    z-index: 1000; /* Ensures the button is above other elements */
+    border-radius: 5px; /* Rounded corners on the button */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Adding a subtle shadow on the button */
+  }
+  
