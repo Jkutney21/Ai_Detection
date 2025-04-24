@@ -1,20 +1,86 @@
-# final_round ish
- 
-training data - 
+# dataset
+# ---
+https://archive.ics.uci.edu/dataset/94/spambase
+# ---
 
-#
-https://support.coro.net/hc/en-us/articles/7071689686172-Install-Tesseract-on-Windows
+Mini project proposal
+Posted on: Monday, April 14, 2025 12:21:23 PM CDT
 
-https://www.google.com/search?q=how+would+i+get+voice+from+a+chat+and+convert+it+to+text+zoom&sca_esv=45dc81e4ba987d1d&ei=tvu9Z4LFEvmU5OMPz4qK4A0&ved=0ahUKEwiC-MnQqt-LAxV5CnkGHU-FAtwQ4dUDCBA&uact=5&oq=how+would+i+get+voice+from+a+chat+and+convert+it+to+text+zoom&gs_lp=Egxnd3Mtd2l6LXNlcnAiPWhvdyB3b3VsZCBpIGdldCB2b2ljZSBmcm9tIGEgY2hhdCBhbmQgY29udmVydCBpdCB0byB0ZXh0IHpvb21IxRRQtgJYiBFwAXgBkAEAmAHAAaABuAWqAQMwLjW4AQPIAQD4AQGYAgWgAu0EwgIKEAAYsAMY1gQYR8ICBRAhGKABwgIFECEYqwKYAwCIBgGQBgiSBwMxLjSgB9IS&sclient=gws-wiz-serp
+Dear all,
+
+We have presentation of mini-project proposal in Friday's class.
+
+Please pick any short ML problem of your choice.
+
+The presentation should include the following:
+
+1. Project Title:
+
+2. Objective:
+
+3. Problem Statement:
+
+4. Dataset:
+We will use the Student Performance Dataset from the UCI Machine Learning Repository or similar datasets that contain features like:
+
+Gender
+
+Age
+
+Study time
+
+Failures
+
+Family support
+
+Absences
+
+Final grade
+
+5. Tools & Technologies:
+
+Python
+
+Scikit-learn
+
+Pandas, NumPy
+
+Matplotlib/Seaborn
+
+Jupyter Notebook
+
+6. Algorithms to be Used:
+
+Linear Regression
+
+Decision Tree
+
+Random Forest
+
+Support Vector Machine (SVM)
+
+7. Methodology:
+
+Data collection and preprocessing
+
+Exploratory data analysis (EDA)
+
+Feature selection and engineering
+
+Model training and testing
+
+Performance evaluation using metrics like accuracy, RMSE, and R² score
+
+Result visualization and interpretation
+
+8. Expected Outcome:
+A well-performing ML model that can accurately predict a student's performance, along with a dashboard or charts showing key contributing factors.
+
+# ---
+
+# data sets 
 
 
+https://huggingface.co/datasets/Ateeqq/AI-and-Human-Generated-Text?utm_source=chatgpt.com
 
-https://www.google.com/search?q=how+would+i+get+voice+from+a++call+ro+text&sca_esv=45dc81e4ba987d1d&ei=hfy9Z4rmM4OJptQP7Lzd6Qk&ved=0ahUKEwjKvMWzq9-LAxWDhIkEHWxeN50Q4dUDCBA&uact=5&oq=how+would+i+get+voice+from+a++call+ro+text&gs_lp=Egxnd3Mtd2l6LXNlcnAiKmhvdyB3b3VsZCBpIGdldCB2b2ljZSBmcm9tIGEgIGNhbGwgcm8gdGV4dDIKECEYoAEYwwQYCjIKECEYoAEYwwQYCkijCFAPWJoCcAB4AZABAJgBpAWgAcUNqgEHMy0xLjAuMrgBA8gBAPgBAZgCAaACkAOYAwCSBwM0LTGgB_kK&sclient=gws-wiz-serp 
-
-https://www.youtube.com/watch?v=V1DpVjyKTYg
-
-https://www.google.com/search?q=live+screen+recording+video+in+python&sca_esv=da71dabda52a3bb7&rlz=1C1VDKB_enUS1012US1012&ei=bmy_Z62qErqFp84P4IKn8Qw&ved=0ahUKEwitmZiiiuKLAxW6wskDHWDBKc4Q4dUDCBA&uact=5&oq=live+screen+recording+video+in+python&gs_lp=Egxnd3Mtd2l6LXNlcnAiJWxpdmUgc2NyZWVuIHJlY29yZGluZyB2aWRlbyBpbiBweXRob24yCBAAGIAEGKIEMggQABiABBiiBDIFEAAY7wVIyRtQ7xFYvhhwAngBkAEAmAGGAaAB5QSqAQMwLjW4AQPIAQD4AQGYAgWgArADwgIKEAAYsAMY1gQYR5gDAIgGAZAGCJIHAzIuM6AHoA4&sclient=gws-wiz-serp
-
-
-
-https://www.google.com/search?q=elasticsearch&oq=elastic+serach&gs_lcrp=EgZjaHJvbWUqDAgBEAAYChixAxiABDIGCAAQRRg5MgwIARAAGAoYsQMYgAQyCQgCEAAYChiABDIJCAMQABgKGIAEMgkIBBAAGAoYgAQyCQgFEAAYChiABDIJCAYQABgKGIAEMg8IBxAuGAoYxwEY0QMYgAQyCQgIEAAYChiABDIJCAkQABgKGIAE0gEINjUyNGowajeoAgiwAgHxBavivlOSUBHE&sourceid=chrome&ie=UTF-8
+https://huggingface.co/datasets/dmitva/human_ai_generated_text?utm_source=chatgpt.com
