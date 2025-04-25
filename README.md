@@ -80,7 +80,4 @@ A well-performing ML model that can accurately predict a student's performance, 
 
 # data sets 
 
-
-https://huggingface.co/datasets/Ateeqq/AI-and-Human-Generated-Text?utm_source=chatgpt.com
-
-https://huggingface.co/datasets/dmitva/human_ai_generated_text?utm_source=chatgpt.com
+https://spamassassin.apache.org/old/publiccorpus/
