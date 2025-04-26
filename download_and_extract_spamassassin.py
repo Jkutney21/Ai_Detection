@@ -16,27 +16,34 @@ files = [
     "20050311_spam_2.tar.bz2"
 ]
 
-# Download + extract folder
-os.makedirs("datasets", exist_ok=True)
+# Folder structure
+tar_dir = "tars"
+extract_dir = "datasets"
+os.makedirs(tar_dir, exist_ok=True)
+os.makedirs(extract_dir, exist_ok=True)
 
 for fname in files:
     url = base_url + fname
-    filepath = os.path.join("datasets", fname)
-    extract_dir = os.path.join("datasets", fname.replace(".tar.bz2", ""))
+    tar_path = os.path.join(tar_dir, fname)
 
-    # Download
-    if not os.path.exists(filepath):
-        print(f"Downloading {fname}...")
-        urllib.request.urlretrieve(url, filepath)
+    # Cleaned output folder name (e.g., "easy_ham", "spam_2")
+    cleaned_name = fname.split("_", 1)[1].replace(".tar.bz2", "")
+    out_path = os.path.join(extract_dir, cleaned_name)
+
+    # Download tar if needed
+    if not os.path.exists(tar_path):
+        print(f"⬇️ Downloading {fname}...")
+        urllib.request.urlretrieve(url, tar_path)
     else:
-        print(f"Already downloaded: {fname}")
+        print(f"✅ Already downloaded: {fname}")
 
-    # Extract
-    if not os.path.exists(extract_dir):
-        print(f"Extracting {fname} to {extract_dir}...")
-        with tarfile.open(filepath, "r:bz2") as tar:
-            tar.extractall(path=extract_dir)
+    # Extract tar if needed
+    if not os.path.exists(out_path):
+        print(f"📦 Extracting {fname} into {out_path}...")
+        os.makedirs(out_path, exist_ok=True)
+        with tarfile.open(tar_path, "r:bz2") as tar:
+            tar.extractall(path=out_path)
     else:
-        print(f"Already extracted: {fname}")
+        print(f"📁 Already extracted: {cleaned_name}")
 
-print("✅ Done downloading and extracting all datasets.")
+print("🎉 Done downloading and extracting.")
