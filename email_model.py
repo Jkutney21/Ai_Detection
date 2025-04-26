@@ -1,6 +1,5 @@
 import os
 import re
-import random
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -10,7 +9,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer, ENGLISH_STOP_WORDS
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import classification_report, confusion_matrix
-from sklearn.preprocessing import MinMaxScaler
 
 # --- Utility Functions ---
 def ensure_dir(path):
@@ -125,54 +123,21 @@ def process_folder(folder_name, ham_list, spam_list):
     ham_df["spam_prob"] = clf.predict_proba(X_ham_tfidf)[:, clf.classes_.tolist().index("spam")]
     ham_df["spam_score"] = 1 - ham_df["spam_prob"]
 
-    # --- Fake Sender Assignment ---
-    possible_senders = [f"user{i}@example.com" for i in range(20)]  # 20 fake senders
-    ham_df["sender"] = [random.choice(possible_senders) for _ in range(len(ham_df))]
-
-    ham_df = ham_df.sort_values("timestamp")
-    window = pd.Timedelta("2 days")
-    ham_df["sender_volume"] = ham_df["sender"].map(ham_df["sender"].value_counts()).fillna(0)
-
-    ham_df["thread_activity"] = ham_df.apply(
-        lambda row: ((ham_df["sender"] == row["sender"]) &
-                     (ham_df["timestamp"] >= row["timestamp"] - window)).sum(),
-        axis=1
-    )
-
-    scaler = MinMaxScaler()
-    priority_inputs = scaler.fit_transform(ham_df[["sender_volume", "thread_activity"]])
-    ham_df["priority_score"] = 0.5 * priority_inputs[:, 0] + 0.5 * priority_inputs[:, 1]
-
-    ham_df["final_score"] = 0.5 * ham_df["spam_score"] + 0.5 * ham_df["priority_score"]
-    ham_df = ham_df.sort_values("final_score", ascending=False)
-
     # --- Top Priority Emails ---
-    print("\nTop Priority Emails:")
-    print(ham_df[["filename", "spam_score", "priority_score", "final_score"]].head(10))
+    print("\nTop Spam-safe Emails:")
+    print(ham_df[["filename", "spam_score"]].head(10))
 
-    # --- Spam Score vs Priority Score Scatterplot ---
+    # --- Spam Score Scatterplot ---
     if len(ham_df) > 1:
         fig, ax = plt.subplots(figsize=(8, 6))
-        sns.scatterplot(data=ham_df, x="spam_score", y="priority_score", hue="final_score", palette="viridis", size="final_score", sizes=(20,200), ax=ax)
-        ax.set_title(f"Spam Score vs Priority Score - {folder_name}")
+        sns.scatterplot(data=ham_df, x="spam_score", y="timestamp", hue="spam_score", palette="viridis", size="spam_score", sizes=(20,200), ax=ax)
+        ax.set_title(f"Spam Score vs Timestamp - {folder_name}")
         ax.set_xlabel("Spam Score (higher = safer)")
-        ax.set_ylabel("Priority Score (higher = more important)")
+        ax.set_ylabel("Timestamp")
         ax.legend()
-        save_plot(fig, f"{plot_folder}/spam_vs_priority.png")
+        save_plot(fig, f"{plot_folder}/spam_vs_timestamp.png")
     else:
-        print(f"Not enough ham emails to plot spam vs priority for {folder_name}.")
-
-    # --- Sender Volume ---
-    if ham_df["sender"].notnull().sum() > 0:
-        fig, ax = plt.subplots(figsize=(10,4))
-        top_senders = ham_df["sender"].value_counts().head(20)
-        sns.barplot(x=top_senders.values, y=top_senders.index, ax=ax)
-        ax.set_title(f"Top 20 Senders - {folder_name}")
-        ax.set_xlabel("Email Count")
-        ax.set_ylabel("Sender")
-        save_plot(fig, f"{plot_folder}/sender_volume.png")
-    else:
-        print(f"No valid senders to plot for {folder_name}.")
+        print(f"Not enough ham emails to plot spam score for {folder_name}.")
 
 # --- Master Runner ---
 def main():
