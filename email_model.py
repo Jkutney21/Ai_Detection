@@ -19,6 +19,13 @@ def save_plot(fig, save_path):
     fig.savefig(save_path, bbox_inches='tight')
     plt.close(fig)
 
+def save_results_to_file(plot_folder, folder_name, results):
+    ensure_dir(plot_folder)  # Ensure the plot folder exists
+    output_path = os.path.join(plot_folder, f"{folder_name}_results.txt")
+    with open(output_path, "w") as file:
+        file.write(results)
+    print(f"Results saved to {output_path}")
+
 # --- Extract email text ---
 def extract_email_body(filepath):
     with open(filepath, "r", encoding="latin1") as file:
@@ -84,7 +91,8 @@ def process_folder(folder_name, ham_list, spam_list):
     y_pred = clf.predict(X_test)
 
     # --- Classification Report ---
-    print(classification_report(y_test, y_pred))
+    classification_report_str = classification_report(y_test, y_pred)
+    print(classification_report_str)
 
     # --- Confusion Matrix ---
     if len(np.unique(y_test)) > 1:
@@ -124,8 +132,18 @@ def process_folder(folder_name, ham_list, spam_list):
     ham_df["spam_score"] = 1 - ham_df["spam_prob"]
 
     # --- Top Priority Emails ---
+    top_emails_str = ham_df[["filename", "spam_score"]].head(10).to_string(index=False)
     print("\nTop Spam-safe Emails:")
-    print(ham_df[["filename", "spam_score"]].head(10))
+    print(top_emails_str)
+
+    # Combine results into a single string
+    results = f"=== Processing {folder_name} ===\n\n"
+    results += classification_report_str + "\n\n"
+    results += "Top Spam-safe Emails:\n"
+    results += top_emails_str + "\n"
+
+    # Save results to a text file in the plot folder
+    save_results_to_file("plots", folder_name, results)
 
     # --- Spam Score Scatterplot ---
     if len(ham_df) > 1:

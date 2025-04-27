@@ -10,3 +10,18 @@ api_keys.txt
 
 # Ignore any other sensitive files
 secrets/
+
+# Node.js-related files and directories
+node_modules/       # Dependency directory
+npm-debug.log*      # NPM debug logs
+yarn-debug.log*     # Yarn debug logs
+yarn-error.log*     # Yarn error logs
+pnpm-debug.log*     # PNPM debug logs
+package-lock.json   # Lock file for npm
+yarn.lock           # Lock file for Yarn
+pnpm-lock.yaml      # Lock file for PNPM
+
+# Build and output directories
+dist/
+build/
+.cache/

@@ -1,0 +1,95 @@
+/* Center the row and its content */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the cards horizontally */
+    align-items: center; /* Center the cards vertically */
+    margin: 0; /* Remove extra margins */
+  }
+  
+  /* Adjust column styling */
+  .col {
+    max-width: 200px; /* Set a maximum width for the column */
+    justify-content: center; /* Center the card inside the column */
+    align-items: center; /* Center the card vertically */
+    padding: 15px; /* Add more spacing between cards */
+  }
+  
+  /* Jumbotron container styling */
+  .j-container {
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    margin: 0 !important; /* Remove extra margins */
+  }
+  
+  /* Album container styling */
+  .album {
+    padding: 20px 0; /* Add vertical padding for spacing */
+    text-align: center; /* Center-align the text */
+  }
+  
+  /* Card styling */
+  .card {
+    margin: 0; /* Remove extra margin */
+    width: 200px; /* Set consistent card width */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    border-radius: 8px; /* Round the corners of the card */
+    overflow: hidden; /* Ensure content stays within rounded corners */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Add hover animation */
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+  }
+  
+  /* Card image styling */
+  .card-img-top {
+    height: 150px; /* Set consistent image height */
+    width: 100%;
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    border-top-left-radius: 8px; /* Round the top-left corner */
+    border-top-right-radius: 8px; /* Round the top-right corner */
+  }
+  
+  /* Card body styling */
+  .card-body {
+    background-color: #f4c430; /* Golden yellow background */
+    padding: 0.5rem; /* Add padding for spacing */
+    text-align: center; /* Center-align the text */
+    border-bottom-left-radius: 8px; /* Round the bottom-left corner */
+    border-bottom-right-radius: 8px; /* Round the bottom-right corner */
+    animation: fadeIn 0.5s ease-in-out; /* Add fade-in animation */
+  }
+  
+  /* Card title styling */
+  .card-title {
+    font-size: 1rem; /* Set consistent font size */
+    color: #000; /* Set text color to black */
+    margin: 0; /* Remove extra margin */
+  }
+  
+  /* Text-muted styling */
+  .text-muted {
+    color: white !important; /* Set text color to white */
+    animation: fadeIn 0.5s ease-in-out; /* Add fade-in animation */
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  main {
+ 
+    margin-top: 50px;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: 	#1C2B49; /* White background for the main content */
+  }

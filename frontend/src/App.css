@@ -1,42 +1,62 @@
+/* Apply to the root container of your app */
+/* Reset body and html */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* Prevent scrolling */
+}
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+/* Ensure the header stays at the top and is centered */
+
+
+/* Main layout styling */
+.main-layout {
+  
+  display: flex;
+  min-height: 100vh; /* Ensure the layout covers the full viewport height */
+  min-width: 125vh;
+  margin-top: 60px; /* Adjust for the fixed header height */
+  background-color: 	#1C2B49; /* White background for the main content */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+/* Ensure the left panel sticks to the left */
+.left-panel {
+  overflow: hidden;
+  position: fixed; /* Fix the panel to the viewport */
+  top: 0; /* Align it to the top of the viewport */
+  left: 0; /* Stick it to the left side */
+  width: 20%; /* Adjust the width as needed */
+  height: 100vh; /* Make it span the full height of the viewport */
+  background-color: #F7ECD9; /* Light Beige background color */
+  border-right: 1px solid #ddd; /* Optional: Add a border to separate the panel */
+  z-index: 0; /* Ensure it stays above other elements */
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.main-content {
+ overflow: hidden;
+  z-index: 999;
+  flex-grow: 1; /* Take up remaining space */
+  width: 70%; /* Match the width of the header and footer */
+  max-width: 60%;
+  min-width: calc(100vh - 120px);
+  
+  margin: 0 auto; /* Center the main content horizontally */
+  background-color: 	#1C2B49; /* White background for the main content */
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+/* Ensure the right panel sticks to the right */
+.right-panel {
+  overflow: hidden;
+  position: fixed; /* Fix the panel to the viewport */
+  top: 0; /* Align it to the top of the viewport */
+  right: 0; /* Stick it to the right side */
+  width: 20%; /* Adjust the width as needed */
+  height: 100vh; /* Make it span the full height of the viewport */
+  background-color: #F7ECD9; /* Light Beige background color */
+  border-left: 1px solid #ddd; /* Optional: Add a border to separate the panel */
+  z-index: 0; /* Ensure it stays above other elements */
 }

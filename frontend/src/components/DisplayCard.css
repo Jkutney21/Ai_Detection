@@ -1,0 +1,55 @@
+/* Unique styles for DisplayCard */
+
+/* Card container */
+.display-card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .display-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Card image */
+  .display-card-img-top {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  /* Card body */
+  .display-card-body {
+    background-color: #f4c430;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  
+  /* Card title */
+  .display-card-title {
+    font-size: 1.2rem;
+    color: #000;
+    margin: 0;
+  }
+  
+  /* Modal styles */
+  .display-card-modal {
+    z-index: 1050;
+  }
+  
+  .display-card-modal-dialog {
+    max-width: 90%;
+  }
+  
+  .display-card-modal-content {
+    background: none;
+    border: none;
+    text-align: center;
+  }
+  
+  .display-card-modal-img {
+    border-radius: 8px;
+    max-height: 95vh;
+    max-width: 95vw;
+  }

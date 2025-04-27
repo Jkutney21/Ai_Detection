@@ -1,0 +1,47 @@
+/* Footer container styling */
+/* Ensure the footer stays at the bottom and is centered */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 60%; /* Adjust the width as needed */
+    margin: 0 auto  ; /* Center the footer horizontally */
+    background-color: transparent; /* Optional: Background color for the footer */
+    z-index: 1000; /* Ensure it stays above other elements */
+    
+    background-color: 	#F4C430;
+    margin-bottom: 0px!important; /* Remove margin at the bottom */
+    text-align: center; /* Center all text inside the footer */
+
+  }
+  
+  /* Left section styling */
+  footer .col-md-4:first-child {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Footer links styling */
+  footer a {
+    color: white; /* Secondary text color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.2s ease-in-out;
+  }
+  
+  footer a:hover {
+    color:#1C2B49	rgb(28, 43, 73); /* Darker color on hover */
+  }
+  
+  /* Footer text styling */
+  footer .text-body-secondary {
+    font-size: 0.9rem; /* Slightly smaller text */
+  }
+  
+  /* Footer logo styling */
+  footer img {
+   
+    width: 50px;
+    height: 50px;
+    object-fit: contain; /* Ensure the logo fits within the dimensions */
+  }

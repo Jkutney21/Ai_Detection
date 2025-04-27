@@ -1,0 +1,43 @@
+
+  header {
+    background-color: #F4C430;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 60%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the header horizontally */
+    
+    z-index: 1000; /* Ensure it stays above other elements */
+    text-align: center; /* Center the content inside the header */
+  }
+  
+  /* Navigation links styling */
+  header .nav-link {
+    color: #000; /* Set link color to black for contrast */
+    font-weight: bold; /* Make the links bold */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  header .nav-link:hover {
+    color:#1C2B49	rgb(28, 43, 73); /* Darker color on hover */
+  }
+  
+  /* Logo styling */
+  header img {
+    
+    width: 40px;
+    height: 32px;
+  }
+  
+/* Hover effect for the logo */
+
+header .fs-4 {
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover effect for the "Spam Detection" text */
+header .fs-4:hover {
+  color: #1C2B49; /* Change text color on hover */
+  transform: scale(1.1); /* Slightly enlarge the text on hover */
+}

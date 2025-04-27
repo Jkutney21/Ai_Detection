@@ -1,0 +1,24 @@
+=== Processing spam_2 ===
+
+              precision    recall  f1-score   support
+
+         ham       0.95      0.99      0.97       510
+        spam       0.98      0.91      0.94       280
+
+    accuracy                           0.96       790
+   macro avg       0.97      0.95      0.96       790
+weighted avg       0.96      0.96      0.96       790
+
+
+Top Spam-safe Emails:
+                             filename  spam_score
+0001.ea7e79d3153e7469e7a9c3e0af6a357e    0.999643
+0002.b3120c4bcbf3101e661161ee7efcb8bf    0.983347
+0003.acfc5ad94bbd27118a0d8685d18c89dd    0.984519
+0004.e8d5727378ddde5c3be181df593f1712    0.994789
+0005.8c3b9e9c0f3f183ddaf7592a11b99957    0.999835
+0006.ee8b0dba12856155222be180ba122058    0.986633
+0007.c75188382f64b090022fa3b095b020b0    0.986442
+0008.20bc0b4ba2d99aae1c7098069f611a9b    0.978393
+0009.435ae292d75abb1ca492dcc2d5cf1570    0.994704
+0010.4996141de3f21e858c22f88231a9f463    0.989830

@@ -1,0 +1,30 @@
+/* Container for falling images */
+.falling-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none; /* Allow clicks to pass through */
+    z-index: 999; /* Ensure it appears above other content */
+  }
+  
+  /* Falling image styling */
+  .falling-image {
+    position: absolute;
+    top: -10%; /* Start above the viewport */
+    width: 50px; /* Set a consistent size for the images */
+    height: auto;
+    animation: fall linear infinite;
+  }
+  
+  /* Falling animation */
+  @keyframes fall {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(110vh); /* Fall beyond the viewport */
+    }
+  }

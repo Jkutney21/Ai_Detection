@@ -1,37 +1,47 @@
 import React from "react";
+import './footer.css';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-      <div className="col-md-4 d-flex align-items-center">
+    <footer className="d-flex justify-content-center align-items-center py-3 border-top">
+      {/* Footer Logo */}
+      <img
+        src="/footer.png"
+        alt="Footer Logo"
+        width="50"
+        height="50"
+        className="img-fluid me-3"
+      />
+
+      {/* Footer Links */}
+      <div className="d-flex align-items-center">
         <a
-          href="/"
-          className="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1"
-          aria-label="Bootstrap"
+          href="https://github.com/Jkutney21/ML_Class_Project"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-decoration-none me-2"
         >
-          <svg className="bi" width="30" height="24" aria-hidden="true">
-            <use xlinkHref="#bootstrap"></use>
-          </svg>
+          Source Code
         </a>
-        <span className="mb-3 mb-md-0 text-body-secondary">© 2025 Company, Inc</span>
+        |
+        <a
+          href="https://spamassassin.apache.org/old/publiccorpus/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-decoration-none ms-2"
+        >
+          Dataset
+        </a>
       </div>
 
-      <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
-        <li className="ms-3">
-          <a className="text-body-secondary" href="#" aria-label="Instagram">
-            <svg className="bi" width="24" height="24" aria-hidden="true">
-              <use xlinkHref="#instagram"></use>
-            </svg>
-          </a>
-        </li>
-        <li className="ms-3">
-          <a className="text-body-secondary" href="#" aria-label="Facebook">
-            <svg className="bi" width="24" height="24" aria-hidden="true">
-              <use xlinkHref="#facebook"></use>
-            </svg>
-          </a>
-        </li>
-      </ul>
+      {/* Footer Logo */}
+      <img
+        src="/footer.png"
+        alt="Footer Logo"
+        width="50"
+        height="50"
+        className="img-fluid ms-3"
+      />
     </footer>
   );
 };
