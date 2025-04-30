@@ -6,6 +6,9 @@
     align-items: center; /* Center the cards vertically */
     margin: 0; /* Remove extra margins */
   }
+  .jumbotron-heading{
+    color:white;
+  }
   
   /* Adjust column styling */
   .col {
@@ -65,7 +68,7 @@
   /* Card title styling */
   .card-title {
     font-size: 1rem; /* Set consistent font size */
-    color: #000; /* Set text color to black */
+    color: white; /* Set text color to black */
     margin: 0; /* Remove extra margin */
   }
   

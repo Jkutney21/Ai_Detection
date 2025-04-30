@@ -14,7 +14,7 @@
   
   /* Navigation links styling */
   header .nav-link {
-    color: #000; /* Set link color to black for contrast */
+    color: white; /* Set link color to black for contrast */
     font-weight: bold; /* Make the links bold */
     transition: color 0.3s ease; /* Smooth transition for hover effect */
   }

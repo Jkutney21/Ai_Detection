@@ -25,6 +25,7 @@ const Header: React.FC = () => {
     width="40"
     height="32"
     className="me-2"
+    style={{ marginLeft: "10px" }}
   />
       </Link>
 
